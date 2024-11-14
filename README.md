@@ -23,7 +23,9 @@ Atualmente, o backend é implementado como uma aplicação monolítica em Spring
 🚀 Roteiro de Evolução
 
 Abaixo está o cronograma de novas features planejadas para o backend.
+
 🗓️ Versão v1.0
+(Concluido)
 
     Funcionalidade: Sistema de Autenticação com JWT
         Descrição: Implementação de autenticação utilizando Spring Security com tokens JWT para controle de acesso.
