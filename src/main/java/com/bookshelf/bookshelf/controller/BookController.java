@@ -34,13 +34,11 @@ public class BookController {
             @RequestParam String query,
             @RequestParam(defaultValue = "0") int startIndex,
             @RequestParam(defaultValue = "10") int maxResults) {
-        System.out.println("teste");
         return bookService.searchBooks(query, startIndex, maxResults);
     }
 
     @GetMapping("/bestsellers")
     public Mono<String> getBestsellers(@RequestParam(defaultValue = "10") int maxResults) {
-        System.out.println("called");
         return bookService.searchBestsellers(maxResults);
     }
 

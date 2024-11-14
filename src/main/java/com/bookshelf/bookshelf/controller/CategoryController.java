@@ -29,7 +29,6 @@ public class CategoryController {
     @GetMapping("/books")
     public Mono<String> getBooksByCategories(@RequestParam(defaultValue = "10") int maxResults) {
         List<Category> categories = categoryRepository.findAll();
-        System.out.println(categories);
         return bookService.searchBooksByCategory(categories, maxResults);
     }
     

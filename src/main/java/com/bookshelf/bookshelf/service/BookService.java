@@ -51,7 +51,6 @@ public class BookService {
                 .collect(Collectors.toList());
 
         if (filteredCategories.isEmpty()) {
-            System.out.println("Categoria com ID 1 não encontrada.");
             return Mono.just("Categoria não encontrada.");
         }
 
