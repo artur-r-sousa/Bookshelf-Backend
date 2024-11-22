@@ -26,6 +26,9 @@ public class User {
   @Column(nullable = true)
   private String whatsapp;
 
+  @Column(nullable = false)
+  private Boolean isActive;
+
   public Long getId() {
     return this.id;
   }
@@ -64,5 +67,13 @@ public class User {
 
   public void setWhatsapp(String args) {
     this.whatsapp = args;
+  }
+
+  public Boolean getIsActive() {
+    return this.isActive;
+  }
+
+  public void setIsActive(Boolean args) {
+    this.isActive = args;
   }
 }

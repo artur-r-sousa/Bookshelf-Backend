@@ -23,7 +23,7 @@ public class BookService {
                 .queryParam("q", query)
                 .queryParam("startIndex", startIndex)
                 .queryParam("maxResults", maxResults)
-                .queryParam("key", "API_KEY") 
+                .queryParam("key", "AIzaSyBKm7Dhf1rKc-Iba8z2UmNqK42Gx5L71fI") 
                 .toUriString();
 
         return webClient.get()

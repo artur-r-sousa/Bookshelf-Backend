@@ -38,24 +38,34 @@ public class AuthService {
     return userRepository.save(user);
   }
 
-
-  public User registerUser(String username, String password) {
-    if (userRepository.findByUsername(username).isPresent()) {
+  public User registerUser(String username, String password, String email) {
+    if (userRepository.findByEmail(email).isPresent()) {
       throw new RuntimeException("Usuário já existe");
     }
 
     User newUser = new User();
     newUser.setUsername(username);
     newUser.setPassword(password);
+    newUser.setEmail(email);
+    newUser.setIsActive(false);
+
     saveUser(newUser);
-    
-    return newUser; 
+
+    return newUser;
   }
 
-  
-  public String authenticate(String username, String password) throws Exception {
-    User user = userRepository.findByUsername(username)
-      .orElseThrow(() -> new Exception("Usuário não encontrado"));
+  public User updateUserPassword(String password, String email) {
+    User existingUser = userRepository.findByEmail(email)
+        .orElseThrow(() -> new RuntimeException("Usuário não existe"));
+
+    existingUser.setPassword(passwordEncoder.encode(password));
+
+    return userRepository.save(existingUser);
+  }
+
+  public String authenticate(String username, String password, String email) throws Exception {
+    User user = userRepository.findByEmail(email)
+        .orElseThrow(() -> new Exception("Usuário não encontrado"));
     if (!passwordEncoder.matches(password, user.getPassword())) {
       throw new Exception("Credenciais inválidas");
     }
@@ -72,9 +82,10 @@ public class AuthService {
 
     return Jwts.builder()
         .setSubject(user.getUsername())
+        .setSubject(user.getEmail())
         .setIssuedAt(now)
         .setExpiration(expiryDate)
-        .signWith(key, SignatureAlgorithm.HS512) 
+        .signWith(key, SignatureAlgorithm.HS512)
         .compact();
   }
 }
