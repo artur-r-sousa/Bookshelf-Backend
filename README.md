@@ -32,6 +32,7 @@ Abaixo está o cronograma de novas features planejadas para o backend.
         Objetivo: Proteger rotas sensíveis e permitir autenticação segura de usuários.
 
 🗓️ Versão v2.0
+(Concluido)
 
     Funcionalidade: Envio de E-mails
         Descrição: Implementação de um serviço de envio de e-mails para notificações como confirmação de cadastro e recuperação de senha.
