@@ -1,5 +1,6 @@
 package com.bookshelf.bookshelf.service;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -14,6 +15,9 @@ public class BookService {
 
     private final WebClient webClient;
 
+    @Value("${google.books.api.key}")
+    private String apiKey;
+
     public BookService(WebClient.Builder webClientBuilder) {
         this.webClient = webClientBuilder.baseUrl("https://www.googleapis.com/books/v1").build();
     }
@@ -23,7 +27,7 @@ public class BookService {
                 .queryParam("q", query)
                 .queryParam("startIndex", startIndex)
                 .queryParam("maxResults", maxResults)
-                .queryParam("key", "AIzaSyBKm7Dhf1rKc-Iba8z2UmNqK42Gx5L71fI") 
+                .queryParam("key", apiKey) 
                 .toUriString();
 
         return webClient.get()
