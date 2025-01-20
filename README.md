@@ -86,14 +86,6 @@ Execute a aplicação:
 
     O backend estará disponível em: http://localhost:8080
 
-📚 Endpoints da API
-Método	Endpoint	Descrição
-GET	/api/books/search	Busca livros por termo de pesquisa
-GET	/api/books/bestsellers	Lista livros mais vendidos
-GET	/api/books/category/{id}	Lista livros por categoria
-GET	/api/books/{id}	Detalhes de um livro específico
-🤝 Contribuição
-
 Contribuições são bem-vindas! Abra uma issue ou envie um Pull Request para discutirmos melhorias e novas funcionalidades.
 📄 Licença
 
