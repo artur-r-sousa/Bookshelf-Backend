@@ -86,27 +86,6 @@ Execute a aplicação:
 
     O backend estará disponível em: http://localhost:8080
 
-Contribuições são bem-vindas! Abra uma issue ou envie um Pull Request para discutirmos melhorias e novas funcionalidades.
-📄 Licença
-
-Este projeto está sob a licença MIT - veja o arquivo LICENSE para mais detalhes.
-
-Com o Bookshelf Backend, esperamos fornecer uma base sólida para o desenvolvimento de um sistema de livraria online escalável e eficiente.
-
-Vamos continuar evoluindo! 💻📖
-Próximos Passos
-
-Agora, você pode copiar este conteúdo e adicionar ao arquivo README.md do backend:
-
-    No terminal, vá para a pasta do backend:
-
-cd backend
-touch README.md
-
-Abra o arquivo README.md no editor de texto, cole o conteúdo e salve.
-
-Faça o commit e suba para o GitHub:
-
     git add README.md
     git commit -m "docs: adicionar README para o backend Spring Boot"
     git push origin main
